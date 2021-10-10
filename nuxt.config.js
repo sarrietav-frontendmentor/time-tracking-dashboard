@@ -50,5 +50,5 @@ export default {
   build: {},
   router: {
     base: '/time-tracking-dashboard/',
-  }
+  },
 }
