@@ -1,5 +1,7 @@
 <template>
-  <Tutorial/>
+  <div class="font-rubik">
+    <Tutorial />
+  </div>
 </template>
 
 <script lang="ts">
