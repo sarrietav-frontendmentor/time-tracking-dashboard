@@ -1,12 +1,12 @@
 <template>
-  <div class="bg-dark-blue h-48 rounded-lg flex flex-col">
+  <div class="bg-dark-blue h-48 rounded-2xl flex flex-col">
     <div
       class="
         bg-blue-700
         flex
         justify-center
         items-center
-        rounded-lg
+        rounded-2xl
         px-2
         py-7
         space-x-4
