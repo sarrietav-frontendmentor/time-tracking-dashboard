@@ -1,11 +1,5 @@
 <template>
-  <div class="font-rubik">
-    <Tutorial />
+  <div class="font-rubik bg-darker-blue">
+    <TheUserComponent />
   </div>
 </template>
-
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({})
-</script>
