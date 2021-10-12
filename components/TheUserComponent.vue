@@ -32,9 +32,47 @@
         items-center
       "
     >
-      <span class="transition-colors hover:text-white">Daily</span>
-      <span class="transition-colors text-white">Weekly</span>
-      <span class="transition-colors hover:text-white">Monthly</span>
+      <span
+        class="transition-colors hover:text-white"
+        :class="getCurrentTimeframe == 'daily' && 'text-white'"
+        @click="onClickDaily"
+        >Daily</span
+      >
+      <span
+        class="transition-colors hover:text-white"
+        :class="getCurrentTimeframe == 'weekly' && 'text-white'"
+        @click="onClickWeekly"
+        >Weekly</span
+      >
+      <span
+        class="transition-colors hover:text-white"
+        :class="getCurrentTimeframe == 'monthly' && 'text-white'"
+        @click="onClickMonthly"
+        >Monthly</span
+      >
     </div>
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+import { RootState } from '~/store'
+export default Vue.extend({
+  computed: {
+    getCurrentTimeframe() {
+      return (this.$store.state as RootState).currentTimeframe
+    },
+  },
+  methods: {
+    onClickDaily() {
+      this.$store.commit('changeTimeframe', 'daily')
+    },
+    onClickWeekly() {
+      this.$store.commit('changeTimeframe', 'weekly')
+    },
+    onClickMonthly() {
+      this.$store.commit('changeTimeframe', 'monthly')
+    },
+  },
+})
+</script>
