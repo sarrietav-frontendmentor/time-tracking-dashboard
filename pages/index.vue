@@ -20,8 +20,8 @@ export default Vue.extend({
     }
   },
   async fetch() {
-    const tasks = await (await this.$axios.get<Task[]>('/data.json')).data
-    this.tasks = tasks
+    const tasks = await this.$axios.get<Task[]>('/data.json')
+    this.tasks = tasks.data
   },
 })
 </script>
