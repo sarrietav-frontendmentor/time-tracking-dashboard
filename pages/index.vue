@@ -12,16 +12,13 @@
 <script lang="ts">
 import Vue from 'vue'
 import { Task } from '~/app.t'
+import { RootState } from '~/store'
 
 export default Vue.extend({
   data(): { tasks: Task[] } {
     return {
-      tasks: [],
+      tasks: (this.$store.state as RootState).tasks,
     }
-  },
-  async fetch() {
-    const tasks = await this.$axios.get<Task[]>('/data.json')
-    this.tasks = tasks.data
   },
 })
 </script>
