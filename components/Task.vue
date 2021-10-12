@@ -44,22 +44,30 @@
         </svg>
       </div>
       <div class="flex justify-between items-center">
-        <span class="font-light text-white text-4xl">10hrs</span>
-        <span class="text-pale-blue">Last Week - 8hrs</span>
+        <span class="font-light text-white text-4xl"
+          >{{ getCurrentTime }}hrs</span
+        >
+        <span class="text-pale-blue">Last Week - {{ getLastTime }}hrs</span>
       </div>
     </div>
   </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 // eslint-disable-next-line import/named
-import Vue, { PropType } from 'vue'
-import { Timeframes } from '~/app.t'
-
+import Vue from 'vue'
 export default Vue.extend({
   props: {
     title: { required: true, type: String },
-    timeframes: { required: true, type: Object as PropType<Timeframes> },
+    timeframes: { required: true, type: Object},
+  },
+  computed: {
+    getCurrentTime() {
+      return this.timeframes[this.$store.state.currentTimeframe].current
+    },
+    getLastTime() {
+      return this.timeframes[this.$store.state.currentTimeframe].previous
+    }
   },
 })
 </script>
