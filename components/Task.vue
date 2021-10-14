@@ -15,7 +15,7 @@
         bg-dark-blue
         px-5
         py-7
-        space-y-1
+        space-y-3
         rounded-2xl
         absolute
         top-12
@@ -26,7 +26,9 @@
       "
     >
       <div class="flex justify-between items-center">
-        <span class="font-medium text-white text-xl">{{ title }}</span>
+        <span class="font-medium text-white text-xl lg:text-base">{{
+          title
+        }}</span>
         <svg
           width="21"
           height="5"

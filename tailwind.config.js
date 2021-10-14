@@ -29,6 +29,9 @@ module.exports = {
         exercise: 'hsl(145, 58%, 55%)',
         social: 'hsl(264, 64%, 52%)',
         'self-care': 'hsl(43, 84%, 65%)',
+        blue: {
+          650: 'hsl(246, 80%, 60%)',
+        },
       },
     },
   },

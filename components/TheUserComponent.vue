@@ -2,7 +2,7 @@
   <div class="bg-dark-blue h-48 lg:h-auto rounded-2xl flex flex-col">
     <div
       class="
-        bg-blue-700
+        bg-blue-650
         rounded-2xl
         px-2
         lg:px-5
