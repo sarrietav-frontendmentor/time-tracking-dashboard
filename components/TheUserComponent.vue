@@ -32,7 +32,12 @@
         flex
         justify-evenly
         items-center
-        lg:flex-col lg:items-start lg:justify-start lg:space-y-3 lg:p-7 lg:h-auto
+        lg:flex-col
+        lg:items-start
+        lg:justify-start
+        lg:space-y-3
+        lg:p-7
+        lg:h-auto
       "
     >
       <span

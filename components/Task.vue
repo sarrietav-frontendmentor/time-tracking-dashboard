@@ -11,15 +11,18 @@
     </div>
     <div
       class="
+        transition-all
         bg-dark-blue
         px-5
         py-7
+        space-y-1
         rounded-2xl
         absolute
-        w-full
         top-12
-        space-y-1
+        w-full
         lg:h-full
+        filter
+        hover:brightness-110
       "
     >
       <div class="flex justify-between items-center">
