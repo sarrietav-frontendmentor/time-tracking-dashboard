@@ -1,15 +1,18 @@
 <template>
-  <div class="bg-dark-blue h-48 rounded-2xl flex flex-col">
+  <div class="bg-dark-blue h-48 lg:h-auto rounded-2xl flex flex-col">
     <div
       class="
         bg-blue-700
+        rounded-2xl
+        px-2
+        lg:px-5
+        py-7
+        space-x-4
+        lg:space-x-0
         flex
         justify-center
         items-center
-        rounded-2xl
-        px-2
-        py-7
-        space-x-4
+        lg:flex-col lg:items-start lg:justify-evenly lg:h-full
       "
     >
       <img
@@ -18,34 +21,34 @@
         class="h-20 rounded-full border-white border-4"
       />
       <div class="flex flex-col text-gray-100">
-        <span class="text-xs text-pale-blue">Report for</span>
-        <span class="text-2xl">Jeremy Robson</span>
+        <span class="text-xs lg:text-lg text-pale-blue">Report for</span>
+        <span class="text-2xl lg:text-4xl lg:font-light">Jeremy Robson</span>
       </div>
     </div>
     <div
       class="
-        text-desaturated-blue
+        text-desaturated-blue text-lg
         h-full
-        text-lg
         flex
         justify-evenly
         items-center
+        lg:flex-col lg:items-start lg:justify-start lg:space-y-3 lg:p-7 lg:h-auto
       "
     >
       <span
-        class="transition-colors hover:text-white"
+        class="cursor-pointer transition-colors hover:text-white"
         :class="getCurrentTimeframe == 'daily' && 'text-white'"
         @click="onClickDaily"
         >Daily</span
       >
       <span
-        class="transition-colors hover:text-white"
+        class="cursor-pointer transition-colors hover:text-white"
         :class="getCurrentTimeframe == 'weekly' && 'text-white'"
         @click="onClickWeekly"
         >Weekly</span
       >
       <span
-        class="transition-colors hover:text-white"
+        class="cursor-pointer transition-colors hover:text-white"
         :class="getCurrentTimeframe == 'monthly' && 'text-white'"
         @click="onClickMonthly"
         >Monthly</span

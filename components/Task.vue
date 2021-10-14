@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="rounded-2xl relative flex justify-end h-40"
-    :class="`bg-${title.toLowerCase().replace(' ', '-')}`"
-  >
+  <div class="rounded-2xl relative flex justify-end h-40" :class="getBgClass">
     <div class="overflow-hidden mr-5">
       <img
         :src="
@@ -22,6 +19,7 @@
         w-full
         top-12
         space-y-1
+        lg:h-full
       "
     >
       <div class="flex justify-between items-center">
@@ -43,7 +41,7 @@
           />
         </svg>
       </div>
-      <div class="flex justify-between items-center">
+      <div class="flex justify-between items-center lg:flex-col lg:items-start">
         <span class="font-light text-white text-4xl"
           >{{ getCurrentTime }}hrs</span
         >
@@ -67,6 +65,17 @@ export default Vue.extend({
     },
     getLastTime() {
       return this.timeframes[this.$store.state.currentTimeframe].previous
+    },
+    getBgClass() {
+      switch (this.title.toLowerCase().replace(" ", "-")) {
+        case "work": return "bg-work"
+        case "play": return "bg-play"
+        case "exercise": return "bg-exercise"
+        case "social": return "bg-social"
+        case "study": return "bg-study"
+        case "self-care": return "bg-self-care"
+        default: return "what"
+      }
     }
   },
 })
