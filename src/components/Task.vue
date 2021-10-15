@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-2xl relative flex justify-end h-40" :class="bgClass">
+  <div class="rounded-2xl flex justify-end h-40" :class="bgClass">
     <div class="overflow-hidden mr-5">
       <img
         :src="
@@ -18,9 +18,8 @@
         space-y-3
         rounded-2xl
         absolute
-        top-12
+        bottom-0
         w-full
-        lg:h-full
         filter
         hover:brightness-110
       "

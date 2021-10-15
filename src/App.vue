@@ -15,7 +15,7 @@
     "
   >
     <TheUserComponent class="row-start-1 row-span-2" />
-    <div v-for="task in tasks" :key="task.title" class="my-12 last:m-0 lg:m-0">
+    <div v-for="task in tasks" :key="task.title" class="my-12 last:m-0 lg:m-0 relative">
       <Task :title="task.title" :timeframes="task.timeframes" />
     </div>
   </main>
