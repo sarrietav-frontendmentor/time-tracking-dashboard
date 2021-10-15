@@ -1,27 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <main
+    class="
+      font-rubik
+      bg-darker-blue
+      h-full
+      px-5
+      py-24
+      lg:grid
+      grid-cols-4
+      place-content-between
+      gap-x-10
+      lg:px-40 lg:h-screen
+    "
+  >
+    <TheUserComponent class="row-span-2" />
+    <div v-for="task in tasks" :key="task.title" class="my-12 last:m-0 lg:m-0">
+      <Task :title="task.title" :timeframes="task.timeframes" />
+    </div>
+  </main>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+<script lang="ts" setup>
+import { computed } from 'vue';
+import { useStore } from './store';
+import TheUserComponent from './components/TheUserComponent.vue';
+import Task from './components/Task.vue';
 
-export default defineComponent({
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-});
+const store = useStore();
+
+const tasks = computed(() => store.state.tasks);
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
