@@ -8,12 +8,13 @@
       py-24
       lg:grid
       grid-cols-4
-      place-content-between
+      place-content-center
       gap-x-10
+      gap-y-10
       lg:px-40 lg:h-screen
     "
   >
-    <TheUserComponent class="row-span-2" />
+    <TheUserComponent class="row-start-1 row-span-2" />
     <div v-for="task in tasks" :key="task.title" class="my-12 last:m-0 lg:m-0">
       <Task :title="task.title" :timeframes="task.timeframes" />
     </div>
